@@ -1,0 +1,33 @@
+{
+  "benchmark_info": {
+    "date": "2025-08-25T01:42:09.000948",
+    "circuit_description": "H(0) -> CX(0,1) -> H(1) -> Measure",
+    "total_controllers_tested": 2,
+    "successful_executions": 0,
+    "failed_executions": 2
+  },
+  "results": [
+    {
+      "controller": "IBM ibm_torino",
+      "backend": "ibm_torino",
+      "execution_time": 0,
+      "success": false,
+      "error": "Session.__init__() got multiple values for argument 'backend'",
+      "timestamp": "2025-08-25T01:42:08.471727"
+    },
+    {
+      "controller": "IBM ibm_brisbane",
+      "backend": "ibm_brisbane",
+      "execution_time": 0,
+      "success": false,
+      "error": "Session.__init__() got multiple values for argument 'backend'",
+      "timestamp": "2025-08-25T01:42:08.997168"
+    }
+  ],
+  "summary": {
+    "fastest_execution": null,
+    "slowest_execution": null,
+    "average_execution_time": 0,
+    "success_rate": 0.0
+  }
+}

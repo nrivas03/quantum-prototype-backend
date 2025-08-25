@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from classic_node import classic_bp, quantum_integration_bp
+from classic_node.controllers.ibm_quantum_controller import register_ibm_quantum_routes
 
 def create_app():
     """
@@ -14,6 +15,9 @@ def create_app():
     # Registrar Blueprints
     app.register_blueprint(classic_bp, url_prefix='/classic')
     app.register_blueprint(quantum_integration_bp, url_prefix='/hybrid')
+    
+    # Registrar rutas de IBM Quantum
+    register_ibm_quantum_routes(app)
 
     return app
 

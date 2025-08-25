@@ -1,6 +1,10 @@
 # config/settings.py
 
 import os
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde .env
+load_dotenv()
 
 class Config:
     # Configuración general
@@ -20,6 +24,15 @@ class Config:
 
     # Configuración de simulador
     SIMULATION_SHOTS = int(os.getenv("SIMULATION_SHOTS", 1024))
+
+    # Configuración de IBM Quantum
+    IBM_QUANTUM_TOKEN = os.getenv("IBM_QUANTUM_TOKEN")
+    IBM_QUANTUM_INSTANCE = os.getenv("IBM_QUANTUM_INSTANCE")  # No usar instancia específica
+    IBM_QUANTUM_CHANNEL = os.getenv("IBM_QUANTUM_CHANNEL", "ibm_quantum_platform")
+    IBM_QUANTUM_DEFAULT_BACKEND = os.getenv("IBM_QUANTUM_DEFAULT_BACKEND", "ibm_brisbane")
+    IBM_QUANTUM_DEFAULT_SHOTS = int(os.getenv("IBM_QUANTUM_DEFAULT_SHOTS", 100))  # Menos shots para plan gratuito
+    IBM_QUANTUM_OPTIMIZATION_LEVEL = int(os.getenv("IBM_QUANTUM_OPTIMIZATION_LEVEL", 1))
+    IBM_QUANTUM_USE_SESSION = os.getenv("IBM_QUANTUM_USE_SESSION", "False").lower() in ("true", "1", "yes")  # No usar sesiones en plan gratuito
 
     @classmethod
     def to_dict(cls):
