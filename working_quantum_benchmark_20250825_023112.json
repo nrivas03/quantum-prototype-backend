@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T02:30:21.448333",
+    "shots": 1024,
+    "optimization_level": 1,
+    "total_circuits": 3,
+    "spinqit_available": true,
+    "skip_spinq_hardware": true,
+    "end_timestamp": "2025-08-25T02:31:12.386564",
+    "total_benchmark_time": 50.94
+  },
+  "circuits": {
+    "Bell State": {
+      "circuit_info": {
+        "name": "Bell State",
+        "description": "Creates a Bell state |00⟩ + |11⟩",
+        "qiskit_circuit_qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[2];\ncreg c[2];\ncreg meas[2];\nh q[0];\ncx q[0],q[1];\nbarrier q[0],q[1];\nmeasure q[0] -> meas[0];\nmeasure q[1] -> meas[1];",
+        "qiskit_circuit_info": {
+          "num_qubits": 2,
+          "num_clbits": 4,
+          "depth": 3,
+          "size": 4
+        },
+        "expected_states": [
+          "00",
+          "11"
+        ],
+        "complexity": "low"
+      },
+      "backends": {
+        "spinq_simulator": {
+          "success": true,
+          "backend": "spinq_simulator",
+          "backend_type": "simulator",
+          "provider": "SpinQ",
+          "execution_time": 0.002,
+          "initialization_time": 0.0,
+          "total_time": 0.002,
+          "shots": 1024,
+          "probabilities": {
+            "00": 0.4999999999809753,
+            "11": 0.4999999999809753
+          },
+          "counts": {
+            "00": 511,
+            "11": 511
+          },
+          "circuit_info": {
+            "name": "Bell State",
+            "complexity": "low",
+            "num_qubits": 2
+          }
+        },
+        "ibm_quantum": {
+          "success": true,
+          "backend": "ibm_brisbane",
+          "backend_type": "real_device",
+          "provider": "IBM Quantum",
+          "job_id": "d2m062kg59ks73c60dn0",
+          "execution_time": 3.42,
+          "queue_time": "N/A",
+          "ibm_execution_time": "N/A",
+          "quantum_seconds": "N/A",
+          "initialization_time": 6.749,
+          "total_time": 16.609,
+          "shots": 1024,
+          "counts": {
+            "11": 525,
+            "00": 445,
+            "01": 40,
+            "10": 14
+          },
+          "probabilities": {
+            "11": 0.5126953125,
+            "00": 0.4345703125,
+            "01": 0.0390625,
+            "10": 0.013671875
+          },
+          "timing_info": {
+            "total_time_measured": 3.42,
+            "measurement_method": "client_side_timing",
+            "includes_queue_time": true,
+            "includes_network_latency": true,
+            "ibm_metrics_available": false
+          },
+          "detailed_metrics": {},
+          "circuit_info": {
+            "name": "Bell State",
+            "complexity": "low",
+            "num_qubits": 2,
+            "optimization_level": 1
+          }
+        }
+      }
+    },
+    "Single Qubit Superposition": {
+      "circuit_info": {
+        "name": "Single Qubit Superposition",
+        "description": "Creates superposition |0⟩ + |1⟩",
+        "qiskit_circuit_qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[1];\ncreg c[1];\ncreg meas[1];\nh q[0];\nbarrier q[0];\nmeasure q[0] -> meas[0];",
+        "qiskit_circuit_info": {
+          "num_qubits": 1,
+          "num_clbits": 2,
+          "depth": 2,
+          "size": 2
+        },
+        "expected_states": [
+          "0",
+          "1"
+        ],
+        "complexity": "minimal"
+      },
+      "backends": {
+        "spinq_simulator": {
+          "success": true,
+          "backend": "spinq_simulator",
+          "backend_type": "simulator",
+          "provider": "SpinQ",
+          "execution_time": 0.001,
+          "initialization_time": 0.0,
+          "total_time": 0.001,
+          "shots": 1024,
+          "probabilities": {
+            "0": 0.4999999999809753,
+            "1": 0.4999999999809753
+          },
+          "counts": {
+            "0": 511,
+            "1": 511
+          },
+          "circuit_info": {
+            "name": "Single Qubit Superposition",
+            "complexity": "minimal",
+            "num_qubits": 1
+          }
+        },
+        "ibm_quantum": {
+          "success": true,
+          "backend": "ibm_brisbane",
+          "backend_type": "real_device",
+          "provider": "IBM Quantum",
+          "job_id": "d2m066uhb60s73cub2kg",
+          "execution_time": 3.68,
+          "queue_time": "N/A",
+          "ibm_execution_time": "N/A",
+          "quantum_seconds": "N/A",
+          "initialization_time": 8.33,
+          "total_time": 17.97,
+          "shots": 1024,
+          "counts": {
+            "1": 578,
+            "0": 446
+          },
+          "probabilities": {
+            "1": 0.564453125,
+            "0": 0.435546875
+          },
+          "timing_info": {
+            "total_time_measured": 3.68,
+            "measurement_method": "client_side_timing",
+            "includes_queue_time": true,
+            "includes_network_latency": true,
+            "ibm_metrics_available": false
+          },
+          "detailed_metrics": {},
+          "circuit_info": {
+            "name": "Single Qubit Superposition",
+            "complexity": "minimal",
+            "num_qubits": 1,
+            "optimization_level": 1
+          }
+        }
+      }
+    },
+    "Two-Qubit Phase": {
+      "circuit_info": {
+        "name": "Two-Qubit Phase",
+        "description": "Two qubits with controlled-Z gate",
+        "qiskit_circuit_qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[2];\ncreg c[2];\ncreg meas[2];\nh q[0];\nh q[1];\ncz q[0],q[1];\nbarrier q[0],q[1];\nmeasure q[0] -> meas[0];\nmeasure q[1] -> meas[1];",
+        "qiskit_circuit_info": {
+          "num_qubits": 2,
+          "num_clbits": 4,
+          "depth": 3,
+          "size": 5
+        },
+        "expected_states": [
+          "00",
+          "01",
+          "10",
+          "11"
+        ],
+        "complexity": "medium"
+      },
+      "backends": {
+        "spinq_simulator": {
+          "success": true,
+          "backend": "spinq_simulator",
+          "backend_type": "simulator",
+          "provider": "SpinQ",
+          "execution_time": 0.0,
+          "initialization_time": 0.0,
+          "total_time": 0.0,
+          "shots": 1024,
+          "probabilities": {
+            "00": 0.24999999998097527,
+            "01": 0.24999999998097527,
+            "10": 0.24999999998097527,
+            "11": 0.24999999998097527
+          },
+          "counts": {
+            "00": 255,
+            "01": 255,
+            "10": 255,
+            "11": 255
+          },
+          "circuit_info": {
+            "name": "Two-Qubit Phase",
+            "complexity": "medium",
+            "num_qubits": 2
+          }
+        },
+        "ibm_quantum": {
+          "success": true,
+          "backend": "ibm_brisbane",
+          "backend_type": "real_device",
+          "provider": "IBM Quantum",
+          "job_id": "d2m06b0hsgmc73b5fp20",
+          "execution_time": 3.52,
+          "queue_time": "N/A",
+          "ibm_execution_time": "N/A",
+          "quantum_seconds": "N/A",
+          "initialization_time": 5.842,
+          "total_time": 16.339,
+          "shots": 1024,
+          "counts": {
+            "10": 239,
+            "01": 272,
+            "00": 257,
+            "11": 256
+          },
+          "probabilities": {
+            "10": 0.2333984375,
+            "01": 0.265625,
+            "00": 0.2509765625,
+            "11": 0.25
+          },
+          "timing_info": {
+            "total_time_measured": 3.52,
+            "measurement_method": "client_side_timing",
+            "includes_queue_time": true,
+            "includes_network_latency": true,
+            "ibm_metrics_available": false
+          },
+          "detailed_metrics": {},
+          "circuit_info": {
+            "name": "Two-Qubit Phase",
+            "complexity": "medium",
+            "num_qubits": 2,
+            "optimization_level": 1
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "total_executions": 6,
+    "successful_executions": 6,
+    "failed_executions": 0,
+    "backends_tested": [
+      "spinq_simulator",
+      "ibm_quantum"
+    ]
+  }
+}
